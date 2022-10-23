@@ -32,16 +32,16 @@ struct GameView: View {
                 Spacer()
             }
         }
-        .onAppear(perform: printIt)
+        .onAppear(perform: generateQuestions)
     }
 
-    func generateQuestions(number: Int) -> [(Problem)] {
-        var problems = [Problem]()
-
+    func generateQuestions() {
+        let numberOfQuestions = [5, 10, 20]
+        let number = numberOfQuestions[times]
         for _ in 0..<number {
             problems.append(Problem(id: UUID(), a: Int.random(in: 2...times), b: Int.random(in: 2...times)))
         }
-        return problems
+        printIt()
     }
 
     func printIt() {
