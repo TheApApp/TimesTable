@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Problem {
-    var id = UUID()
+//    var id = UUID()
     var a = 0
     var b = 0
 

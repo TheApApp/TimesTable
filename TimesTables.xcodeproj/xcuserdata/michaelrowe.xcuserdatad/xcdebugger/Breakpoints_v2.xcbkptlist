@@ -20,7 +20,7 @@
             landmarkType = "0">
             <Locations>
                <Location
-                  uuid = "4B710A07-5947-412C-8F75-2933C7A04F58 - 5e3cf126e4d81234"
+                  uuid = "4B710A07-5947-412C-8F75-2933C7A04F58 - 5e3cf126e4d81213"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,16 +30,16 @@
                   urlString = "file:///Users/michaelrowe/Development/HackingWithSwift/100DaysOfSwiftUI/TimesTables/TimesTables/ContentView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "66">
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "11">
                </Location>
                <Location
-                  uuid = "4B710A07-5947-412C-8F75-2933C7A04F58 - e2dc7a3eafae3fb0"
+                  uuid = "4B710A07-5947-412C-8F75-2933C7A04F58 - c532aee2a5473328"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TimesTables.Problem.init(id: Foundation.UUID, a: Swift.Int, b: Swift.Int) -&gt; TimesTables.Problem"
+                  symbolName = "TimesTables.Problem.init(a: Swift.Int, b: Swift.Int) -&gt; TimesTables.Problem"
                   moduleName = "TimesTables"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/michaelrowe/Development/HackingWithSwift/100DaysOfSwiftUI/TimesTables/TimesTables/ContentView.swift"
@@ -47,9 +47,25 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "10">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1BA40E23-9F2F-456C-986F-9AEF60671D8F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TimesTables/GameView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "generateQuestions()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

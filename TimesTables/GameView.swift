@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GameView: View {
-    var chosenDifficulty: Int
-    var times: Int
+    var chosenDifficulty: Int = 0
+    var times: Int = 2
 
     @State private var problems = [Problem]()
     @State private var score = 0
@@ -28,7 +28,7 @@ struct GameView: View {
                     Text("Score: \(score)")
                 }
                 .padding(10)
-                Text("\(problems[0].question)")
+//                Text("\(problems[0].question)")
                 Spacer()
             }
         }
@@ -37,9 +37,9 @@ struct GameView: View {
 
     func generateQuestions() {
         let numberOfQuestions = [5, 10, 20]
-        let number = numberOfQuestions[times]
+        let number = numberOfQuestions[chosenDifficulty]
         for _ in 0..<number {
-            problems.append(Problem(id: UUID(), a: Int.random(in: 2...times), b: Int.random(in: 2...times)))
+            problems.append(Problem(a: Int.random(in: 2...self.times), b: Int.random(in: 2...self.times)))
         }
         printIt()
     }
