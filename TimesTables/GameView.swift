@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct GameView: View {
-    var problems: [Problem]
+    var chosenDifficulty: Int
+    var times: Int
+
+    @State private var problems = [Problem]()
     @State private var score = 0
     @State private var currentQuestion = 0
 
@@ -32,6 +35,15 @@ struct GameView: View {
         .onAppear(perform: printIt)
     }
 
+    func generateQuestions(number: Int) -> [(Problem)] {
+        var problems = [Problem]()
+
+        for _ in 0..<number {
+            problems.append(Problem(id: UUID(), a: Int.random(in: 2...times), b: Int.random(in: 2...times)))
+        }
+        return problems
+    }
+
     func printIt() {
         print("Number of questions = \(problems.count)")
             problems.forEach() { problem in
@@ -43,6 +55,6 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
 
     static var previews: some View {
-        GameView(problems: [Problem(id:UUID(), a: 5, b: 6)])
+        GameView(chosenDifficulty: 0, times: 5)
     }
 }

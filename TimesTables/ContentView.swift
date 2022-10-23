@@ -44,7 +44,6 @@ struct ContentView: View {
                         .font(.title2)
                     Spacer()
                     Button("Start Game") {
-                        problems = generateQuestions(number: numberOfQuestions[chosenDifficulty])
                         path.append("GameView")
                     }
                     .padding()
@@ -57,20 +56,11 @@ struct ContentView: View {
                 .navigationTitle("Times Tables")
                 .navigationDestination(for: String.self) { view in
                     if view == "GameView" {
-                        GameView(problems: problems)
+                        GameView(chosenDifficulty: chosenDifficulty, times: times)
                     }
                 }
             }
         }
-    }
-
-    func generateQuestions(number: Int) -> [(Problem)] {
-        var problems = [Problem]()
-
-        for _ in 0..<number {
-            problems.append(Problem(id: UUID(), a: Int.random(in: 2...times), b: Int.random(in: 2...times)))
-        }
-        return problems
     }
 }
 
