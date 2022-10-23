@@ -70,15 +70,7 @@ struct ContentView: View {
         for _ in 0..<number {
             problems.append(Problem(id: UUID(), a: Int.random(in: 2...times), b: Int.random(in: 2...times)))
         }
-        printIt(problems: problems)
         return problems
-    }
-
-    func printIt(problems: [Problem]) {
-        print("Number of questions = \(problems.count)")
-            problems.forEach() { problem in
-                print(problem.question)
-            }
     }
 }
 
