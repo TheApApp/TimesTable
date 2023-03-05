@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct GameView: View {
-    var chosenDifficulty: Int = 0
-    var times: Int = 2
+    var chosenDifficulty: Int
+    var times: Int
+
+    init(chosenDifficulty: Int = 0, times: Int = 2) {
+        self.chosenDifficulty = chosenDifficulty
+        self.times = times
+
+        _problems = State(wrappedValue: generateQuestions())
+    }
 
     @State private var problems = [Problem]()
     @State private var score = 0
@@ -28,20 +35,23 @@ struct GameView: View {
                     Text("Score: \(score)")
                 }
                 .padding(10)
-//                Text("\(problems[0].question)")
+                Text("\(problems[0].question)")
                 Spacer()
             }
         }
-        .onAppear(perform: generateQuestions)
     }
 
-    func generateQuestions() {
+    func generateQuestions() -> [Problem] {
         let numberOfQuestions = [5, 10, 20]
         let number = numberOfQuestions[chosenDifficulty]
+        var p: [Problem] = []
         for _ in 0..<number {
-            problems.append(Problem(a: Int.random(in: 2...self.times), b: Int.random(in: 2...self.times)))
+            problems.append(Problem(a: Int.random(in: 2...times), b: Int.random(in: 2...times)))
         }
+
         printIt()
+        return p
+        /// todo: https://www.hackingwithswift.com/forums/100-days-of-swiftui/day-35-fatal-error-on-new-view/17006/17082
     }
 
     func printIt() {
